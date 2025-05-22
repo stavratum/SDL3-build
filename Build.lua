@@ -9,4 +9,10 @@ workspace "SDL Build Test"
    filter "system:windows"
       buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
 
-include "Build-SDL.lua"
+include "Build-SDL.lua" -- SDL build script requires SDL source
+
+group "Core"
+   include "Core/Build-Core.lua"
+
+group ""
+   include "App/Build-App.lua"
